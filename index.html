@@ -3,18 +3,199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RunnerMate</title>
+  <title>RunnerMate — Couch to 5K, built around you</title>
+  <meta name="description" content="RunnerMate reads your Apple Health data and builds an 8-week Couch to 5K plan matched to your current fitness. Private by design — no accounts, no servers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
-    body { font-family: -apple-system, sans-serif; max-width: 680px; margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
-    h1 { font-size: 1.8rem; }
+    :root {
+      --mint: #dcf5e7;
+      --mint-deep: #c9efd9;
+      --green: #0e4f38;
+      --green-dark: #0a3d2b;
+      --ink: #123c2d;
+      --ink-soft: #3d6353;
+      --card: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Manrope', -apple-system, sans-serif;
+      background: var(--mint);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .wrap { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
+
+    header { padding: 28px 0; }
+    .brand { font-weight: 800; font-size: 1.35rem; letter-spacing: -0.02em; }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      padding: 40px 0 72px;
+      flex-wrap: wrap;
+    }
+    .hero-copy { flex: 1 1 380px; }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero h1 em { font-style: normal; color: var(--green); }
+    .hero p.lead {
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      margin-bottom: 32px;
+      max-width: 44ch;
+    }
+    .cta {
+      display: inline-block;
+      background: var(--green);
+      color: #e7fbef;
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 16px 32px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .cta:hover { background: var(--green-dark); }
+    .cta-note { display: block; margin-top: 12px; font-size: 0.9rem; color: var(--ink-soft); }
+
+    .phone {
+      flex: 0 1 300px;
+      margin: 0 auto;
+      border-radius: 44px;
+      border: 10px solid var(--green-dark);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(10, 61, 43, 0.25);
+      background: var(--green-dark);
+    }
+    .phone img { display: block; width: 100%; height: auto; }
+
+    .features {
+      background: var(--card);
+      border-radius: 28px;
+      padding: 56px 48px;
+      margin-bottom: 72px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px 48px;
+    }
+    .feature h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .feature .dot {
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      background: var(--mint-deep);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .feature p { color: var(--ink-soft); font-size: 0.97rem; }
+
+    .privacy {
+      text-align: center;
+      padding: 0 0 80px;
+    }
+    .privacy h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .privacy p {
+      color: var(--ink-soft);
+      max-width: 56ch;
+      margin: 0 auto;
+    }
+
+    footer {
+      background: var(--green-dark);
+      color: #b9dcc9;
+      padding: 32px 0;
+      font-size: 0.92rem;
+    }
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer a { color: #e7fbef; text-decoration: none; margin-left: 24px; }
+    footer a:first-child { margin-left: 0; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      .features { padding: 40px 28px; }
+      .hero { padding-bottom: 56px; }
+    }
   </style>
 </head>
 <body>
-  <h1>RunnerMate</h1>
-  <p>A Couch to 5K running trainer for iPhone.</p>
-  <ul>
-    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-    <li><a href="support.html">Support</a></li>
-  </ul>
+  <header class="wrap">
+    <div class="brand">🏃 RunnerMate</div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <h1>Couch to 5K,<br><em>built around you</em></h1>
+        <p class="lead">Most 5K plans assume you're starting from zero. RunnerMate doesn't assume — it reads your Apple Health data and builds an 8-week plan matched to where you actually are.</p>
+        <a class="cta" href="#">Coming soon to the App&nbsp;Store</a>
+        <span class="cta-note">For iPhone, with Apple Watch support</span>
+      </div>
+      <div class="phone">
+        <img src="screenshot-plan.png" alt="RunnerMate plan screen showing an 8-week training plan with the next 35-minute key run" width="720" height="1564">
+      </div>
+    </section>
+
+    <section class="features wrap">
+      <div class="feature">
+        <h3><span class="dot">📊</span>Starts where you are</h3>
+        <p>Reads 28 days of steps, workouts and resting heart rate to score your fitness and pick the right starting level — no quiz, no guesswork.</p>
+      </div>
+      <div class="feature">
+        <h3><span class="dot">🧠</span>Adapts as you run</h3>
+        <p>An on-device AI advisor watches how your runs go and recommends where to pick up next — repeat a week, or skip ahead when you're flying.</p>
+      </div>
+      <div class="feature">
+        <h3><span class="dot">⌚</span>Made for Apple Watch</h3>
+        <p>Your next workout is scheduled to your Watch automatically, with guided intervals, warm-ups and cool-downs on your wrist.</p>
+      </div>
+      <div class="feature">
+        <h3><span class="dot">✅</span>Tracks itself</h3>
+        <p>Finished runs are matched to your plan automatically from Apple Health. Widgets show your week at a glance; milestones earn shareable certificates.</p>
+      </div>
+    </section>
+
+    <section class="privacy wrap">
+      <h2>Private by design</h2>
+      <p>Your health data never leaves your iPhone. RunnerMate has no accounts, no sign-up and no servers — fitness scoring and AI coaching all happen on-device.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 RunnerMate</span>
+      <span>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+      </span>
+    </div>
+  </footer>
 </body>
 </html>
