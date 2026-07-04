@@ -23,14 +23,21 @@ header { padding: 28px 0; }
   letter-spacing: -0.02em;
   color: var(--ink);
   text-decoration: none;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand img {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
 }
 
 main.card {
   background: var(--card);
   border-radius: 28px;
   padding: 48px;
-  margin-bottom: 72px;
+  margin: 24px 0 72px;
 }
 main.card h1 {
   font-size: clamp(1.7rem, 4vw, 2.2rem);
@@ -66,6 +73,8 @@ main.card a { color: var(--green); font-weight: 600; }
   margin-top: 0.6rem;
 }
 .cta:hover { background: var(--green-dark); }
+/* main.card a is more specific than .cta, so restate the button color */
+main.card a.cta { color: #e7fbef; }
 
 footer {
   background: var(--green-dark);
