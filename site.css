@@ -14,9 +14,9 @@ body {
   color: var(--ink);
   line-height: 1.6;
 }
-.wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+.wrap { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
 
-header { padding: 28px 0; }
+header.wrap { padding: 48px 24px 28px; }
 .brand {
   font-weight: 800;
   font-size: 1.35rem;
@@ -33,11 +33,24 @@ header { padding: 28px 0; }
   border-radius: 8px;
 }
 
+.cta {
+  display: inline-block;
+  background: var(--green);
+  color: #e7fbef;
+  font-weight: 800;
+  padding: 13px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.cta:hover { background: var(--green-dark); }
+
 main.card {
   background: var(--card);
   border-radius: 28px;
   padding: 48px;
-  margin: 24px 0 72px;
+  margin: 24px auto 72px;
+  max-width: 720px;
 }
 main.card h1 {
   font-size: clamp(1.7rem, 4vw, 2.2rem);
@@ -62,19 +75,8 @@ main.card ul { padding-left: 1.3rem; margin: 0.5rem 0; }
 main.card a { color: var(--green); font-weight: 600; }
 .meta { font-size: 0.9rem; }
 
-.cta {
-  display: inline-block;
-  background: var(--green);
-  color: #e7fbef;
-  font-weight: 800;
-  padding: 13px 26px;
-  border-radius: 999px;
-  text-decoration: none;
-  margin-top: 0.6rem;
-}
-.cta:hover { background: var(--green-dark); }
 /* main.card a is more specific than .cta, so restate the button color */
-main.card a.cta { color: #e7fbef; }
+main.card a.cta { color: #e7fbef; margin-top: 0.6rem; }
 
 footer {
   background: var(--green-dark);
@@ -83,7 +85,6 @@ footer {
   font-size: 0.92rem;
 }
 footer .wrap {
-  max-width: 1020px;
   display: flex;
   justify-content: space-between;
   align-items: center;
