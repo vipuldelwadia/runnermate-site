@@ -18,7 +18,7 @@
   <div class="wrap">
   <main class="card">
     <h1>Privacy Policy</h1>
-    <p class="meta"><strong>Last updated: August 2026</strong></p>
+    <p class="meta"><strong>Last updated: October 2026</strong></p>
 
     <h2>Overview</h2>
     <p>RunnerMate ("the app") is a Couch to 5K running trainer for iPhone. This policy explains what data the app reads and how it is used. We are committed to your privacy.</p>
@@ -34,10 +34,13 @@
       <li>Sleep analysis</li>
       <li>Recent runs and workouts, including workout routes (GPS) — used to display your run map and pace splits</li>
     </ul>
-    <p><strong>Your Health data is processed entirely on your device.</strong> It is never transmitted to external servers, never shared with third parties, and never used for advertising or marketing purposes. RunnerMate has no server backend and no user accounts.</p>
+    <p><strong>Your Health data is processed on your device.</strong> Two things leave it. The details listed under Apple Intelligence go to Apple's Private Cloud Compute to write a note about a run you just finished and to write your training advice. If you turn on run export, files for your runs go to your own iCloud Drive (see Data Storage). Your Health data is never sent to any other server, never shared with other third parties, and never used for advertising or marketing purposes. RunnerMate has no server backend and no user accounts.</p>
 
-    <h2>On-Device AI (Apple Intelligence)</h2>
-    <p>RunnerMate includes an AI running advisor powered by Apple's on-device FoundationModels framework. All AI processing occurs locally on your device. No data is sent to external AI services. This feature requires Apple Intelligence hardware (iPhone 15 Pro or later).</p>
+    <h2>Apple Intelligence</h2>
+    <p>The summary at the end of a training block uses Apple's on-device model. It runs entirely on your iPhone, and nothing it reads leaves it.</p>
+    <p>RunnerMate's training advice suggests your next run and writes a line about your recent training. On iOS 27 and later, on devices that support Apple Intelligence, Apple's server model writes it through Private Cloud Compute when your plan should change: when RunnerMate first builds your plan, when you rebuild it or start a training block, and when a new run arrives. At other times, or when Private Cloud Compute is not available, or when you are close to or at Apple's daily limit, your iPhone writes it, or RunnerMate uses its built-in guidance. To write it, RunnerMate sends Apple your runs from the past 30 days, each with how many days ago it was, its duration, its distance and pace when recorded, and its average and peak heart rate when recorded. For runs that match your plan, it also sends the planned workout, its place in your plan and its length, how long you ran, whether RunnerMate matched the run to your plan only approximately, and on a training block the type of run and how you said it felt. It sends how many days it has been since your last run, your average sleep over the past 7 nights, your average active energy over the past 7 days, your average resting heart rate over the past 7 and 30 days, your average daily steps over the past 7 days, a weekly summary of your runs from 31 to 90 days ago, your plan's level, week and run number, whether you are on a training block, and your next planned workout. It does not send dates, your route or location, or anything that identifies you. Training advice and the post-run note share Apple's daily limit, and the note comes first. Apple Intelligence on iPhone needs iPhone 15 Pro or later.</p>
+    <p>Right after a run, RunnerMate writes a short note about it with Apple Intelligence. On iOS 27 and later, on devices that support it, Apple's server model writes the note through Private Cloud Compute. If that is not available, your iPhone writes it, or RunnerMate shows a fixed phrase. To write the note, RunnerMate sends Apple the run's duration, its distance and pace on outdoor runs that recorded a distance, its average heart rate when one was recorded, whether it was indoors, the type of run, how many runs you did in the past four weeks, and whether it was your longest run so far. It does not send the distance of any other run, dates, your route or location, your sleep, resting heart rate or active energy, or anything that identifies you. Apple limits how many of these requests you can make each day. Past that limit, your iPhone writes the note, or RunnerMate shows a fixed phrase. The note is stored on your iPhone with the run.</p>
+    <p>For how Apple handles Private Cloud Compute requests, see <a href="https://security.apple.com/blog/private-cloud-compute/">Apple's description of Private Cloud Compute</a>.</p>
 
     <h2>Advertising (Google AdMob)</h2>
     <p>RunnerMate displays advertisements served by Google AdMob. Ads are non-personalized, and your Health data is never used for ad targeting. AdMob may collect the following non-health data to serve and measure ads:</p>
@@ -58,7 +61,9 @@
     <p>With your permission, RunnerMate can save run certificates you create to your photo library. The app only adds images — it never reads your photos.</p>
 
     <h2>Data Storage</h2>
-    <p>Your training plan and preferences are stored locally on your device using Apple's standard frameworks (SwiftData, UserDefaults). No data is uploaded to any server.</p>
+    <p>Your training plan, run notes and preferences are stored on your device using Apple's standard frameworks (SwiftData, UserDefaults). RunnerMate does not sync them to iCloud or to any server. Your device backups include them, under your iCloud Backup settings.</p>
+    <p>Run export is off unless you turn it on. When you do, RunnerMate writes one file per run to a Runs folder in your own iCloud Drive, with that run's Health data and its route, unless you turn the route off. Apple stores and syncs those files under your iCloud account, and you can see and delete them in the Files app.</p>
+    <p>Everything else that leaves your device is described above: the details sent to Private Cloud Compute, and the non-health data that Google AdMob and Kickstart Exchange receive to show ads, ask for ad consent where the law requires it, and show app cards.</p>
 
     <h2>Children's Privacy</h2>
     <p>RunnerMate is not directed at children under 13. The app does not knowingly collect personal information from children.</p>
